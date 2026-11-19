@@ -11,7 +11,7 @@
   </div>
 
   <div class="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
-    <form action="#" method="POST" class="space-y-6">
+    <form method="POST" class="space-y-6" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
       <div>
         <label for="email" class="block text-sm/6 font-medium text-gray-900">Email address</label>
         <div class="mt-2">
@@ -21,6 +21,7 @@
             name="email"
             required
             autocomplete="email"
+            formControlName="email"
             class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"
           />
         </div>
@@ -41,6 +42,7 @@
             type="password"
             name="password"
             required
+            formControlName="password"
             autocomplete="current-password"
             class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"
           />
@@ -56,12 +58,5 @@
         </button>
       </div>
     </form>
-
-    <p class="mt-10 text-center text-sm/6 text-gray-500">
-      Not a member?
-      <a href="#" class="font-semibold text-indigo-600 hover:text-indigo-500"
-        >Start a 14 day free trial</a
-      >
-    </p>
   </div>
 </div>
